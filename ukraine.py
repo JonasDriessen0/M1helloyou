@@ -1,17 +1,41 @@
-def q():
-    print("A. ")
-    print("B. ")      
-    awnser = input("")
-    while True:
-        if awnser == "A":
-            print("")
-            input("Press enter to continue:")
-        elif awnser == "B":
-            print("")
-            input("Press enter to continue:")
-        else:
-            print(awnser + " isnt a valid awnser")
-        break
+from threading import Timer
+import time
+
+#alle quicktime functions staan hier
+def quicktimetraining():
+    timeout = 5
+    t = Timer(timeout, print, ["You failed to press the button in time"])
+    t.start()
+    start_time = time.time()
+    prompt = f"A quicktime event has started you have 5 seconds! (enter)\n"
+    answer = input(prompt)
+    t.cancel()
+    end_time = time.time()
+    reaction_time = end_time - start_time
+    if reaction_time > timeout:
+        print("You failed to press the button in time")
+        dodge = False
+    else:
+        print("You completed this quicktime event")
+        dodge = True
+
+def quicktimedoor():
+    timeout = 5
+    t = Timer(timeout, print, ["You failed to grab onto something \n[Ending] You died"])
+    t.start()
+    start_time = time.time()
+    prompt = f"Quickly grab onto something so you dont fall out of the car! (enter)\n"
+    answer = input(prompt)
+    t.cancel()
+    end_time = time.time()
+    reaction_time = end_time - start_time
+    if reaction_time > timeout:
+        print("You failed to grab onto something \n[Ending] You died")
+        exit()
+        dodge = False
+    else:
+        print("You grab onto the seat as to not fall out of the vehicle.")
+        dodge = True
 
 #hier staan alle functions voor de vragen
 def q1():
@@ -92,21 +116,43 @@ def soldier():
             print(awnser + " isnt a valid awnser")
         break
 
-def q():
-    print("A. ")
-    print("B. ")      
+def exp():
+    print("A. Yes")
+    print("B. A little bit") 
+    print("C. None")     
     awnser = input("")
     while True:
         if awnser == "A":
-            print("")
+            print("'Good, well come with me'")
             input("Press enter to continue:")
         elif awnser == "B":
-            print("")
+            print("'Good, well come with me'")
+            input("Press enter to continue:")
+        elif awnser == "C":
+            print("'Alright well ill teach you the basics'")
             input("Press enter to continue:")
         else:
             print(awnser + " isnt a valid awnser")
         break
 
+def plan():
+    print("A. Get supressing fire on the enemies so the other squads can move up")
+    print("B. Wait it out") 
+    print("C. get closer to the enemy")     
+    awnser = input("")
+    while True:
+        if awnser == "A":
+            print("You look at where the enemy fire is coming from, its a treeline on the other side of a field so you all start shooting at where you think the enemies are located.")
+            input("Press enter to continue:")
+        elif awnser == "B":
+            print("'That wouldnt be a good idea soldier' A high ranking officer says we should supress the enemies so the other squads can move up")
+            input("Press enter to continue:")
+        elif awnser == "C":
+            print("'That wouldnt be a good idea soldier' A high ranking officer says we should supress the enemies so the other squads can move up")
+            input("Press enter to continue:")
+        else:
+            print(awnser + " isnt a valid awnser")
+        break
 
 
 print("██╗░░░██╗██╗░░██╗██████╗░░█████╗░██╗███╗░░██╗███████╗  ███████╗░█████╗░██████╗░███████╗██╗░██████╗░███╗░░██╗" "\n"
@@ -123,7 +169,7 @@ print("██╗░░░██╗██╗░░██╗██████╗�
 "╚══════╝╚══════╝░╚═════╝░╚═╝░╚════╝░╚═╝░░╚══╝" "\n")
 input("Pres enter to start:")
 name = input("Hello, please enter your name:")
-print("Welcome "+name+", This story is about a fighter joining the ukraine foreign legion and going on special missions to help gain intel for the ukrainian militar. You will be playing as him throughout his entire journey and you will be making various choises that and into different outcomes so choose wisely.")
+print("Welcome "+name+", This story is about a fighter joining the ukraine foreign legion and going on special missions to help gain intel for the ukrainian military. You will be playing as him throughout his entire journey and you will be making various choises that and into different outcomes so choose wisely.")
 input("press enter to continue:")
 print("[Arrival]")
 print("As you step out of the train you can hear the announcer from the station say something in polish that you dont understand. "
@@ -146,4 +192,21 @@ soldier()
 print("[training]")
 print("You arrive at a military building where other people are housed and he takes you to the training building, "
 "a high ranking soldier is waiting for you there. 'Hey soldier welcome to base, i assume youve had prior combat experience right?")
-
+exp()
+print("'Alright when your in the battlefield you need to act quick and make important decisions so thats what we are going to be practicing today' "
+"This game has quicktime events, quicktime events are when you need to press a key within a limited amount of time to do a certain action. "
+"As soon as you are ready we can start")
+input("Press enter to start quicktime event:")
+quicktimetraining()
+print("'Well done soldier looks like your pretty much ready for the battlefield go to your weapon station and ill inform you on the mission'")
+print("You go to grab your gear and weapons and head to the room where the info on the mission will be given.")
+print("'Alright soldiers today your mission will be to assist other fighter who are in combat right now. "
+"Entry will be done by vehicles but from then on it will be by foot. Does everyone understand? Good.")
+input("press enter to continue:")
+print("You and your other crew members rush to the vehicles, once inside your given orders to follow the others. "
+"You sit in the backseat while another crew member is driving, bombs are falling all around you suddenly while in a sharp corner the car door on your side flies open")
+input("press enter to continue:")
+quicktimedoor()
+print("'Jesus christ that was close'")
+print("You soon arrive at the location and gunfire can be heard from multiple places, what is the plan?")
+plan()
