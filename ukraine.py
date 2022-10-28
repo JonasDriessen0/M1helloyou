@@ -154,6 +154,26 @@ def plan():
             print(awnser + " isnt a valid awnser")
         break
 
+def sitrep():
+    print("A. Send other troops to head to the school")
+    print("B. Go into the building and help") 
+    print("C. Ignore it")     
+    awnser = input("")
+    while True:
+        if awnser == "A":
+            print("You feel as if you have done enough for today and you tell other troops of the situation, they emediatly head over")
+            print("[Ending] The other troops sent in managed to clear the building of hostile activity, but you are questioned for not heading in yourself.")
+            exit()
+        elif awnser == "B":
+            print("")
+            input("Press enter to continue:")
+        elif awnser == "C":
+            print("You feel as if you have done enough for today and you decide to turn off the radio and ignore it")
+            print("[Ending] Once you arrive at base you are questioned why you didnt go help the people at the school since it has now been taken over by enemies and the school attendants are being held hostage, you likely wont get very far if you keep doing this...")
+            exit()
+        else:
+            print(awnser + " isnt a valid awnser")
+        break
 
 print("██╗░░░██╗██╗░░██╗██████╗░░█████╗░██╗███╗░░██╗███████╗  ███████╗░█████╗░██████╗░███████╗██╗░██████╗░███╗░░██╗" "\n"
 "██║░░░██║██║░██╔╝██╔══██╗██╔══██╗██║████╗░██║██╔════╝  ██╔════╝██╔══██╗██╔══██╗██╔════╝██║██╔════╝░████╗░██║" "\n"
@@ -210,3 +230,8 @@ quicktimedoor()
 print("'Jesus christ that was close'")
 print("You soon arrive at the location and gunfire can be heard from multiple places, what is the plan?")
 plan()
+print("After that you get the orders to push up with the other squads and take enemy territory, so you and your crew push to the location and once you arrive you're informed that the position has been taken from the enemies"
+" and you can return to base. You head to the car  but are informed of an alerting situation; a school with children still inside is"
+" being captured by enemy forces")
+print("What will you do?")
+sitrep()
